@@ -1,0 +1,36 @@
+schema {
+  query: RootQueryType
+  mutation: RootMutationType
+  # subscription: RootSubscriptionType
+}
+
+type RootQueryType {
+  user(id: Int!): User!
+  users: [User!]
+  messages: [Message]
+}
+
+type RootMutationType {
+  changeNickname(input: ChangeNicknamePayload!): User
+  resetUsers: [User!]
+}
+
+# type RootSubscriptionType {
+
+# }
+
+type Message {
+  user: User!
+  message: String!
+}
+
+type User {
+  id: ID!
+  name: String!
+  nickname: String!
+}
+
+input ChangeNicknamePayload {
+  id: Int!
+  nickname: String!
+}

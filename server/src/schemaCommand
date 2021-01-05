@@ -1,0 +1,31 @@
+query user($id: Int!) {
+  user(id: $id) {
+    id
+    name
+    nickname
+  }
+}
+
+query users {
+  users{
+    id
+    name
+    nickname
+  }
+}
+
+mutation changeNickname($id: Int!, $nickname: String!) {
+  changeNickname(input: {id: $id, nickname: $nickname}){
+    id
+    name
+    nickname
+  }
+}
+
+mutation resetUsers {
+  resetUsers {
+    id
+    name
+    nickname
+  }
+}
