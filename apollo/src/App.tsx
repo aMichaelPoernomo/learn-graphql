@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 
 import routePath from './config/routePath'
@@ -8,15 +8,8 @@ import LiveChat from './container/liveChat'
 import Context from './config/context'
 
 function App() {
-  const [userProfile, setUserProfileState] = useState(0)
-  const setUserProfile = useCallback(
-    (id: number) => {
-      setUserProfileState(id)
-    },
-    [setUserProfileState],
-  )
   return (
-    <Context.Provider value={{ userProfile, setUserProfile }}>
+    <Context.Provider value={{}}>
       <Router>
         <Switch>
           <Route exact path={routePath.apolloClient} component={ApolloClient} />

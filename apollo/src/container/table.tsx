@@ -9,9 +9,6 @@ import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import { Button } from '@material-ui/core'
 
-import { useMutation } from '@apollo/client'
-import { RESET_USERS } from '../graphql/mutation'
-
 const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
     head: {
@@ -59,10 +56,9 @@ export default function CustomizedTables(props: Props) {
   }, [data])
 
   // ----------------------------------------- reset users -----------------------------------------
-  const [resetUsers] = useMutation(RESET_USERS)
   const handleReset = useCallback(() => {
-    resetUsers()
-  }, [resetUsers])
+    console.log('reset users')
+  }, [])
   // --------------------------------------- end reset users -----------------------------------------
 
   return (

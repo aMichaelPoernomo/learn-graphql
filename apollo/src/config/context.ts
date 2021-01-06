@@ -1,11 +1,5 @@
 import { createContext } from 'react'
 
-interface AppContext {
-  userProfile: any
-  setUserProfile: (id: number) => void
-}
+interface AppContext {}
 
-export default createContext<AppContext>({
-  userProfile: 0,
-  setUserProfile: (id: number) => {},
-})
+export default createContext<AppContext>({})

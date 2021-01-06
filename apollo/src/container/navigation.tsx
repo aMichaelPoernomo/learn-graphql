@@ -1,16 +1,15 @@
-import React, { useCallback, useContext } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { Grid, ButtonGroup, Button, InputLabel, FormControl, MenuItem, Select } from '@material-ui/core'
 import { useHistory } from 'react-router'
 
 import routePath from '../config/routePath'
 import { GET_USERS_QUERY } from '../graphql/query'
-import Context from '../config/context'
 
 function Navigator() {
   const history = useHistory()
   const { data: usersData } = useQuery(GET_USERS_QUERY)
-  const { userProfile, setUserProfile } = useContext(Context)
+  const [userProfile, setUserProfile] = useState(0)
 
   const handleChange = useCallback(
     e => {
